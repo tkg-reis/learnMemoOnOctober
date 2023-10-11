@@ -1,10 +1,11 @@
-###
 <h1>10月：積み上げ</h1>
-<strong>暗記はするな。概念などをまとめよう。</strong>
-<strong>できるだけ自分の言葉でまとめよう。</strong>
+<ul>
+    <ol>暗記はするな。概念などをまとめよう。</ol>
+    <ol>できるだけ自分の言葉でまとめよう。</ol>
+    <ol>参考記事はできるだけエビデンスを担保するために、2つ以上集める</ol>
+</ul>
 
-###
-"2023 10.01"
+## "2023 10.01"
 git push origin master でのエラー対応
 
 対象ファイル：https://github.com/tkg-reis/new_gulp_sass_img_js
@@ -20,41 +21,35 @@ git push origin master でのエラー対応
 ref
 https://zenn.dev/yuma_rails/articles/4cfde6a523a72e
 
-###
-TypeScript intersection types
+### TypeScript intersection types
 
 2つの型宣言がある場合、typeで型宣言をして、それらを結合する操作。結合する場合、type宣言して定義した型ともう一方の型をアンバサンド&で結合する。
 ex. type User = Profile & Login
 
-###
-TypeScript union types
+### TypeScript union types
 ある変数などに対して、型を二つ定義したいときに使用する。論理和の|を使用して定義する。
 ex. let val : boolean | string;
     let array: (boolean | string)[];
 
-###
-TypeScript literal types
+### TypeScript literal types
 ある変数に代入できる者を限定することが可能。（文字列、数字でも可能）
 ex. let company : "Facebook" | "Twitter" | "Apple" ;
     company = "Facebook";
     company = "amazon"は代入不可
 
-###
-TypeScript typeof 
+### TypeScript typeof 
 ある宣言済みの変数などに定義された型を別の変数の型に継承するやり方。宣言済みの変数の型以外の型のものを代入するとエラーになる。宣言済みかどうかは型推論できているかどうか。オブジェクト形式の型も継承可能。
 ex. let msg: string = "Hello"
     let talk: typeof msg;
 
-###
-TypeScript keyof 
+### TypeScript keyof 
 キー情報を型で定義して、そのキーをユニオン型で継承して使用するキーの部分の型宣言。
 ex. type Keys = { primary: string, secondary: string}
     let keys :keyof : Keys 
     key = primary 
 
 
-###
-keyof + typeof
+### keyof + typeof
 ex. const Sport = {
     soccer: "soccer",
     baseball: "baseball",
@@ -63,8 +58,7 @@ ex. const Sport = {
 let keySports: keyof typeof Sport
 型とキー情報を継承して使用することが可能。
 
-###
-TypeScript enum
+### TypeScript enum
 オブジェクトのキーだけのように記述。自動で連番を割り当ててくれるので、バグを防ぐことができる。
 enum OS {
     Windows,
@@ -81,11 +75,11 @@ const PC: PC = {
     id: 1,
     OSType: OS.Windows
 }
+
 <hr>
 
-###
-"2023 10.03"
-useReducer
+## "2023 10.03"
+### useReducer
 
 分からない部分：useStateとuseReducerの違い。
 
@@ -98,9 +92,8 @@ https://reffect.co.jp/react/react-hook-reducer-understanding/
 
 <hr>
 
-###
-"2023.10.11"
-Generics
+## "2023.10.11"
+### Generics
 
 先にインターフェースの形だけを作っておく。
 <T>はよく使われるエイリアス。<T>に型が渡るイメージ。
@@ -169,13 +162,52 @@ function funcGen3<T extends Props>(props: T) {
 
 const gen6 = funcGen3({price: 12});
 
-アロー関数での書き方
+#### アロー関数での書き方
 
 const funcGen4 = <T extends Props>(props: T) => {
     return {
         val: props.price
     }
 }
+
+## Java Public static void main(String[] args)の意味
+
+わかったこと：argsはargumentの略（引数）。JavaとJavaScriptはそもそもの実行動作が違う気がする。
+対話型と非対話型言語の調査。Javaはコンパイラ言語、JavaScriptはインタープリタ言語（スクリプト言語）である。
+
+ref
+<code>
+https://qiita.com/kahatato/items/1b4921bb58731f0b7fea#:~:text=%E3%81%AE%E7%95%A5%E7%9C%81-,args%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6,%E5%8F%97%E3%81%91%E7%B6%99%E3%81%84%E3%81%A7%E3%81%84%E3%82%8B%E3%81%9F%E3%82%81%E3%81%A7%E3%81%99%E3%80%82
+</code>
+
+## コンパイラ言語とインタープリタ言語
+
+結論：前者は、プログラムの実行時に、PCが読める文字に変更を加える。ソースプログラムをいったん機械語に翻訳し，その機械語になったプログラムを実行する方式。実行速度は早い。実行時に文字変更を加える関係で、コンパイラしないとエラーが出てこない。
+ex.C++・Objective-C・Go・swift・(Java)
+
+後者は、あらかじめPCが読める文字に変更すること。命令を一つずつ，機械語に解釈しながら実行する方式。実行速度は割と遅い。命令1つに対してなので、エラーの発見がしやすい。
+ex.HTMLやCSS・Ruby・Python・JavaScript・PHP
+
+Javaは双方の中間的な存在。
+
+ref
+<code>
+<ul>
+    <li>
+        https://www.zealseeds.com/Lang/LangJavascript/WhatIsJavaScript/index.html#jump3
+    </li>
+    <li>
+        https://www3.cuc.ac.jp/~miyata/classes/prg1/02/2way.html
+    </li>
+    <li>
+        https://www.tokai-bs.co.jp/trends/column-350/#:~:text=%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%97%E3%83%AA%E3%82%BF%E5%9E%8B%E8%A8%80%E8%AA%9E%E3%81%AE%E4%BE%8B,%E3%82%89%E3%82%8C%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E5%A4%9A%E3%81%8F%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82
+    </li>
+</ul>
+
+</code>
+
+## 対話型言語と非対話型言語
+
 
 <hr>
 <hr>
