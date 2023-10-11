@@ -1,5 +1,7 @@
 ###
 <h1>10月：積み上げ</h1>
+<strong>暗記はするな。概念などをまとめよう。</strong>
+<strong>できるだけ自分の言葉でまとめよう。</strong>
 
 ###
 "2023 10.01"
@@ -79,8 +81,10 @@ const PC: PC = {
     id: 1,
     OSType: OS.Windows
 }
+<hr>
 
 ###
+"2023 10.03"
 useReducer
 
 分からない部分：useStateとuseReducerの違い。
@@ -92,10 +96,89 @@ https://qiita.com/hibi_toshi/items/ad5b79f20547d5eb8d05?utm_campaign=post_articl
 https://reffect.co.jp/react/react-hook-reducer-understanding/
 
 
+<hr>
 
+###
+"2023.10.11"
+Generics
 
+先にインターフェースの形だけを作っておく。
+<T>はよく使われるエイリアス。<T>に型が渡るイメージ。
 
+interface Gen<T> {
+    item: T;
+};
 
+後からitemの型を当てはめる。
+
+const gen0:Gen<string> = {
+    item: "hello"
+};
+
+また、デフォルトで型を定義することも可能。
+
+interface Gen1<T = string> {
+    item: T;
+}
+
+const gen1: Gen1 = {
+    item: "hello"
+};
+
+また型を動的に指定することも可能。型の事前指定。
+
+interface Gen2<T extends string | number> {
+    item: T;
+}
+
+const gen2: Gen2<string> = {
+    item: "hello"
+}
+
+関数の引数でも型を指定する。
+function funcGen1<T>(props: T) {
+    return {item : props}
+}
+
+型推論が働くので、型を明示的に宣言する必要がない
+const gen3 = funcGen1("test")
+funcGen1<string>("test")
+
+上記は同義である。
+
+ユニオン型を使用しても型を付けられる。
+const gen4 = funcGen<string | null>(null);
+
+function funcGen2<T extends string | null>(props: T) {
+    return {val: props }
+}
+
+const gen5 = funcGen2("test2");
+
+interfaceとextendsで型を事前に指定することも可能。
+
+interface Props {
+    price: number;
+}
+
+function funcGen3<T extends Props>(props: T) {
+    return {
+        val: props.price
+    }
+};
+
+const gen6 = funcGen3({price: 12});
+
+アロー関数での書き方
+
+const funcGen4 = <T extends Props>(props: T) => {
+    return {
+        val: props.price
+    }
+}
+
+<hr>
+<hr>
 <hr>
 <hr>
 <hr>
