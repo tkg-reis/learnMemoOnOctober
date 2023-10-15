@@ -206,11 +206,55 @@ ref
 
 </code>
 
-## 対話型言語と非対話型言語
+## "23.10.15"
+### 追記 JavaScript/TypeScriptの各言語タイプ
 
+結論：JavaScript/TypeScriptを触っていれば、理解がしやすい！！
+
+Javascriptはインタープリター言語、TypeScriptはコンパイラ言語である。前者はブラウザで即実行されるのではやい！後者はコンパイルしないと使用できない。かつtscのインストールの手間やtscコマンドで、コンパイル処理しないといけないので面倒。だが型が付くので開発に適している。
+
+ref
+<code>
+    https://xtech.nikkei.com/atcl/nxt/column/18/02450/051900002/
+</code>
+
+<code>
+    https://webpia.jp/interpreter-merit/
+</code>
 
 <hr>
+
+## "23.10.12"
+
+### jsonの型推論
+
+結論：jsonのデータをtypeofで型指定すると、自動で型推論が働き、型の直に打つ作業がなくなる。
+
+<code>
+    import Data from './data';
+    type User = typeof Data;
+</code>
+
 <hr>
+
+## "23.10.15"
+
+### Javaのファイル間の情報の受け渡し方について
+
+結論：import.パッケージ名.subDir.参照するクラスの名前。こうすることで、オブジェクト指向開発ができる。
+
+ref
+<code>
+    https://style.potepan.com/articles/31604.html
+</code>
+
+
+<code></code>
+<code></code>
+<code></code>
+<code></code>
+<code></code>
+<code></code>
 <hr>
 <hr>
 <hr>
