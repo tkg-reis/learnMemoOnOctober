@@ -248,11 +248,51 @@ ref
     https://style.potepan.com/articles/31604.html
 </code>
 
+<hr>
 
-<code></code>
-<code></code>
-<code></code>
-<code></code>
+## "23.10.16"
+
+### ブラウザレンダリングの仕組み
+
+結論：html=> (bytes=> chars => token => nodes => DOM) => css解析(厳密にはlinkがhtmlで見つかったとき) => (bytes=> chars => token => nodes => cssOM) => JavaScript =>(compile) => make render tree => layout => painting(画面に描画していく行程) => 
+
+ref 
+<code>https://zenn.dev/ak/articles/c28fa3a9ba7edb</code>
+
+
+### そもそもnpmからわからない
+
+#### nvmについて
+Node.jsのバージョンを変更できる。
+
+#### npm-check-updates (コマンド：ncu)
+コマンドでアップデート情報を一括で確認可能。ncuコマンドで個別でパッケージの更新状況を確認できる。
+
+<code>https://zenn.dev/antez/articles/a9d9d12178b7b2</code>
+
+<hr>
+
+## "23.10.25"
+
+### 言葉を正しく使えないITエンジニアは三流エンジニア
+
+結論：自分の使う言葉を担保できるだけの調査をしておこう。またjava => Java,javascript => JavaScriptなど正しい表記を意識する。
+
+<code>https://s8a.jp/words-are-correctly</code>
+
+### 私たちはどうして公式ドキュメントが読めないのか？
+
+結論：公式ドキュメントを読む文化がないことや、公式ドキュメントを読む意味が感じられないの部分が自分に不足していると感じた。そのため一次情報を積極的に取得していくこと、読みに行く姿勢が必要だと感じた。
+
+<code>https://qiita.com/hiraike32/items/f0a211cceb0ecc516b6c</code>
+
+### async/await を完全に理解する
+
+
+
+<code>https://zenn.dev/vatscy/articles/ba2263bdfadfeb805379</code>
+
+<code>https://zenn.dev/nameless_sn/articles/mongodb_tutorial</code>
 <code></code>
 <code></code>
 <hr>
