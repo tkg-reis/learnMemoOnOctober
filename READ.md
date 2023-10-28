@@ -292,10 +292,48 @@ Node.jsのバージョンを変更できる。
 
 <code>https://zenn.dev/vatscy/articles/ba2263bdfadfeb805379</code>
 
-<code>https://zenn.dev/nameless_sn/articles/mongodb_tutorial</code>
-<code></code>
-<code></code>
 <hr>
+
+## "23.10.27"
+
+### fetchとaxiosの4つの相違点
+
+なぜ調べたか：単純に双方の違いがあまり分からなかったため。
+
+結論：わたしみたいな初心者はaxiosで問題なし。
+fetch => インストールなし、httpメソッドに通信の種類（postなど）をオブジェクトで記述しなければならない。jsonをstringifyで、解凍してやる必要がある。
+<br>
+jsonのデータの取得は一度thenからresで受け取り、再度thenでつないでデータを取得する処理が必要になる。
+エラーハンドリングに決定的な違いがあり、404,500のhttpリクエストの返却でもコードが動いてしまう。理由はfetchがリクエストを投げてレスポンスを受け取って返すことにあるので、404,500でも成功しているとあちらは認識すると言うこと。
+<br>
+axios => インストールあり、httpメソッドはpostなど関数が用意されていて、記述がすっきりしている。jsonのデータ取得は、thenからresで一度で取得が可能になる。エラーハンドリングでは404,500でエラーを吐く。
+
+<code>https://zenn.dev/syu/articles/9840082d1a6633</code>
+
 <hr>
+
+## "23.10.28"
+
+### 新人プログラマをレビューで殺さない方法
+
+なぜこの記事を読もうと思ったか。： これからのチーム開発の準備とプルリクエストの現実を知るため。
+
+結論： 公式ドキュメントで一方的に終了や、無意識に煽られたりする。またノーヒントで確認したかどうかを聞いてくる事案もある。これらの事案があることを知っておくだけでも、今後の仕事のことが少しでも理解できる、またメンタルヘルスを維持する上で知っていると知らないでは今後変わってくると思い見て良かった。
+
+<code>https://qiita.com/hiraike32/items/32840b11536fa1b78621</code>
+
+### 破壊的メソッドを考える
+
+
+
+<code>https://qiita.com/yujilow1220/items/978b811a9910a9516bb4</code>
+<code>https://zenn.dev/tk4/articles/4ccd85460bb3fff7fff8</code>
+<code></code>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <hr>
 <hr>
